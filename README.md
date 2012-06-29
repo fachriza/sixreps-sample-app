@@ -7,12 +7,12 @@ Sample application using Sixreps API. This sample build using some of another li
 * Webserver (already tested with Apache, Litespeed, and NGINX)
 * PHP v5.2 or higher.
 * Yii Framework v1.1.x
-* Application ID and Application Secret from Sixreps Developer site (http://developers.sixreps.com/).
+* Application ID and Application Secret from [Sixreps Developer site](http://developers.sixreps.com/).
 * Cup of coffee or tea (I prefered tea) :grin:
 
 ## Installation
 
-Please make sure you have download Yii Framework and extract it on your drive, you can extract it anywhere even outside your htdocs or www folder, as long as we can include them (there is a lot of any explanation about this at http://www.yiiframework.com/doc/), please rename this following files :
+Please make sure you have download Yii Framework and extract it on your drive, you can extract it anywhere even outside your htdocs or www folder, as long as we can include them (there is a lot of any explanation about this at [Yii Documentation](http://www.yiiframework.com/doc/)), please rename this following files :
 
 * index.php.default -> index.php
 * protected/config/main.php.default -> protected/config/main.php
@@ -24,7 +24,7 @@ Dump ``protected/data/sixreps_user_token.sql`` to your MySQL. This is what you n
 This is what you need to do for main config file :
 
 * Change your DB connection information
-* Put your APP_ID and APP_SECRET that provided from Sixreps Developer Site.
+* Put your APP_ID and APP_SECRET that provided from [Sixreps Developer site](http://developers.sixreps.com/).
 
 ## Copyright
 
