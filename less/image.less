@@ -1,0 +1,105 @@
+.pad(@space) {
+	padding: @space
+}
+
+.abs(@space) {
+	top: @space;
+	left: @space;
+	position: absolute
+}
+
+.avatar,
+.app-icon {
+	overflow: hidden;
+	display: block;
+	position: relative;
+	.background-clip(border-box);
+	.box-shadow(0 0 3px @gray);
+
+	&.pull-left {
+		margin-right: 10px
+	}
+
+	&.pull-right {
+		margin-left: 10px
+	}
+
+	span {
+		display: block;
+		background-size: cover
+	}
+
+	&::after {
+		content: "";
+		top: 0;
+		left: 0;
+		.inner-box-shadow(0 0 5px @grayLight);
+		
+	}
+
+	&.icon24 {
+		.square(22px);
+		.pad(1px);
+
+		span {
+			.square(22px)
+		}
+
+		&::after {
+			.square(22px);
+			.abs(1px)
+		}
+	}
+
+	&.icon48 {
+		.square(44px);
+		.pad(2px);
+
+		span {
+			.square(44px)
+		}
+
+		&::after {
+			.square(44px);
+			.abs(2px)
+		}
+	}
+
+	&.icon96 {
+		.square(90px);
+		.pad(3px);
+
+		span {
+			.square(90px)
+		}
+
+		&::after {
+			.square(90px);
+			.abs(3px)
+		}
+	}
+
+	&.icon160 {
+		.square(152px);
+		.pad(4px);
+
+		span {
+			.square(152px)
+		}
+
+		&::after {
+			.square(152px);
+			.abs(4px)
+		}
+	}
+}
+
+.layout-left,
+.layout-right {
+	.avatar,
+	.app-icon {
+		&:hover {
+			background-color: lighten(@blue, 10%)
+		}
+	}
+}

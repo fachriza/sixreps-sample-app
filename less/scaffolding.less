@@ -1,0 +1,117 @@
+// Scaffolding
+// Basic and global styles for generating a grid system, structural layout, and page templates
+// -------------------------------------------------------------------------------------------
+
+
+// STRUCTURAL LAYOUT
+// -----------------
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: @baseFontFamily;
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
+    color: @textColor;
+    background-color: #eee;
+
+    &::before {
+        content: "";
+        height: 100%;
+        float: left;
+        width: 0;
+        margin-top: -32767px;
+    }
+}
+
+
+// LINKS
+// -----
+
+a {
+    color: @linkColor;
+    text-decoration: none;
+}
+a:hover {
+    color: @linkColorHover;
+    text-decoration: underline;
+}
+
+#mainWrapper {
+    min-height: 100%
+}
+
+#mainContent {
+    overflow: auto;
+    padding-bottom: 36px;
+    padding-top: 61px;
+
+    #content {
+        overflow: hidden
+    }
+}
+
+#footer {
+    position: relative;
+    height: 35px;
+    margin-top: -36px;
+    clear: both;
+    border-top: 1px solid @white;
+    background: #444;
+    .box-shadow;
+    color: darken(@white, 10%);
+    font-size: 11px;
+    .box-shadow(0 -1px 6px lighten(@gray, 20%));
+
+    a {
+        color: darken(@white, 50%);
+        display: inline-block;
+        margin: 0 5px
+    }
+
+    .container {
+        line-height: 35px
+    }
+}
+
+.column-1 {
+    background-image: url(../images/1cols-bg.png);
+    background-repeat: repeat-y;
+    background-position: 50% 0;
+    
+    .layout-main {
+        .pull-left;
+        width: 960px;
+        padding: 10px;
+        background: @white
+    }
+}
+
+.column-3 {
+    background-image: url(../images/3cols-bg.png);
+    background-repeat: repeat-y;
+    background-position: 50% 0;
+    
+    .layout-main {
+        .pull-left;
+        width: 560px;
+        padding: 10px;
+        background: @white
+    }
+}
+
+.layout-left {
+    .pull-left;
+    width: 200px;
+    padding: 10px 0
+}
+
+.layout-right {
+    .pull-right;
+    width: 200px;
+    padding: 10px 0
+}

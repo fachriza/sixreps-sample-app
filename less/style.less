@@ -1,0 +1,153 @@
+#headerSearch {
+	margin: 10px 0;
+
+	input[type="text"] {
+		margin-bottom: 0
+	}
+}
+
+#siteNav {
+	list-style: none;
+
+	li {
+		.pull-left;
+
+		a {
+			display: block;
+			padding: 5px
+		}
+	}
+}
+
+ul#stream-nav {
+	list-style: none;
+	margin-left: 0;
+	border-bottom: 1px dotted #ccc;
+	padding-bottom: 10px;
+
+	li {
+		font-weight: bold;
+		font-family: arial;
+		font-size: 14px;
+		line-height: 24px;
+
+		&.active {
+			background: url(../images/left-arrow-white.png) 100% 50% no-repeat;
+
+			a {
+				text-decoration: none;
+				color: @gray
+			}
+		}
+
+		a {
+			display: block;
+			padding-left: 20px;
+			background-repeat: no-repeat;
+			background-position: 0 50%;
+			color: lighten(@blue, 10%);
+
+			&:hover {
+				text-decoration: none;
+				color: @gray
+			}
+
+			&.all {
+				background-image: url(../images/icon/world.png)
+			}
+
+			&.photo {
+				background-image: url(../images/icon/photo.png)
+			}
+
+			&.status {
+				background-image: url(../images/icon/status.png)
+			}
+
+			&.video {
+				background-image: url(../images/icon/video.png)
+			}
+
+			&.blog {
+				background-image: url(../images/icon/book.png)
+			}
+
+			&.bodyprogress {
+				background-image: url(../images/icon/body-progress.png)
+			}
+
+			&.bodystat {
+				background-image: url(../images/icon/body-stat.png)
+			}
+
+			&.workout {
+				background-image: url(../images/icon/workout.png)
+			}
+		}
+	}
+}
+
+ul.feeds {
+	list-style: none;
+	margin-left: 0;
+
+	.feed-item {
+		border-bottom: 1px dotted #ccc;
+		padding: 0 0 10px;
+		margin-bottom: 10px;
+
+		.feed-header {
+			display: block;
+			float: none
+		}
+
+		.feed-content-container {
+			width: 500px;
+
+			.feed-content {
+				display: block;
+				clear: both;
+				margin: 10px 0;
+			}
+		}
+	}
+}
+
+#welcome-user {
+    border-bottom: 1px dotted #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    a {
+    	color: @orange
+    }
+}
+
+.avatar-lists {
+	margin-left: 3px;
+
+	.avatar {
+		margin-bottom: 10px
+	}
+}
+
+.sidebar-title {
+	font-family: arial;
+	margin-right: 10px;
+	margin-bottom: 10px;
+
+	h3 {
+		color: @gray;
+		font-size: 12px;
+		.pull-left;
+		line-height: 24px
+	}
+
+	a {
+		.pull-right;
+		line-height: 24px;
+		font-size: 11px;
+		color: @grayLight
+	}
+}

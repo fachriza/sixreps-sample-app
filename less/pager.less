@@ -1,0 +1,55 @@
+// PAGER
+// -----
+
+.pager {
+    margin-left: 0;
+    margin-bottom: @baseLineHeight;
+    margin-top: @baseLineHeight;
+    list-style: none;
+    text-align: center;
+    .clearfix();
+
+    ul {
+        margin: 0;
+
+        li {
+            display: inline-block;
+
+            span,
+            a {
+                display: inline-block;
+                padding: 5px 10px;
+                font-weight: 400;
+                font-family: arial;
+                text-transform: uppercase;
+                font-size: 11px;
+                line-height: 15px;
+                .border-radius(3px);
+                .box-shadow()
+            }
+
+            a {
+                background: lighten(@blue, 10%);
+                .gradientBar(lighten(@blue, 10%), @blue);
+                text-decoration: none;
+                color: @white;
+
+                &:hover {
+                    background: @grayLight;
+                    .gradientBar(lighten(@grayLight, 10%), @grayLight);
+                }
+            }
+
+            span {
+                color: lighten(@blue, 10%);
+                .gradientBar(@white, darken(@white, 10%));
+
+                &.current {
+                    background: @gray;
+                    .gradientBar(lighten(@grayLight, 10%), darken(@grayLight, 20%));
+                    color: @white;
+                }
+            }
+        }
+    } 
+}
