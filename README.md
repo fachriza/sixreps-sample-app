@@ -1,8 +1,8 @@
-= Sixreps Sample Application
+# Sixreps Sample Application
 
 Sample application using Sixreps API. This sample build using some of another library such as [Yii-bootstrap](http://www.cniska.net/yii-bootstrap/), [jQuery](http://jquery.com/), etc.
 
-== Requirement
+## Requirement
 
 * Webserver (already tested with Apache, Litespeed, and NGINX)
 * PHP v5.2 or higher.
@@ -10,7 +10,7 @@ Sample application using Sixreps API. This sample build using some of another li
 * Application ID and Application Secret from Sixreps Developer site (http://developers.sixreps.com/).
 * Cup of coffee or tea (I prefered tea) :grin:
 
-== Installation
+## Installation
 
 Please make sure you have download Yii Framework and extract it on your drive, you can extract it anywhere even outside your htdocs or www folder, as long as we can include them (there is a lot of any explanation about this at http://www.yiiframework.com/doc/), please rename this following files :
 
@@ -26,7 +26,7 @@ This is what you need to do for main config file :
 * Change your DB connection information
 * Put your APP_ID and APP_SECRET that provided from Sixreps Developer Site.
 
-== Copyright
+## Copyright
 
 This sample app is released in MIT License.
 
