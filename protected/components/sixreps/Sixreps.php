@@ -35,6 +35,12 @@ class Sixreps {
     protected $_host = 'https://api.sixreps.com/';
 
     /**
+     * @var bool Verify SSL using bundle certificate from SDK
+     */
+    protected $_verify_bundle = false;
+    protected $_cacert_path;
+
+    /**
      * @var array A list of supported HTTP methods
      */
     protected $_http_methods = array('GET', 'POST', 'PUT', 'DELETE');
@@ -43,10 +49,22 @@ class Sixreps {
      * Create a new instance of Sixreps.
      * @return  void
      */
-    public function __construct($host = null) {
+    public function __construct($host = null, $verify_bundle = false) {
         if (!empty($host)) {
             $this->_host = $host;
         }
+
+        $this->_verify_bundle = $verify_bundle;
+        $this->_cacert_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'cacert.pem';
+    }
+
+    /**
+     * Tell CURL to verify cert using bundle certificate or not.
+     *
+     * @param   bool  $verify_bundle
+     */
+    public function verifyLocalCert($verify_bundle = false) {
+        return $this->_verify_bundle = $verify_bundle;
     }
 
     /**
@@ -160,14 +178,24 @@ class Sixreps {
             $curl_options[CURLOPT_HTTPHEADER] = $headers;
         }
 
+        if ($this->_verify_bundle == true) {
+            $curl_options[CURLOPT_CAINFO] = $this->_cacert_path;
+        }
+
         $request = curl_init($url);
         curl_setopt_array($request, $curl_options);
 
         $body = curl_exec($request);
         $info = curl_getinfo($request);
 
+        if (curl_errno($request) == 60) { // CURLE_SSL_CACERT
+            curl_setopt($request, CURLOPT_CAINFO, $this->_cacert_path);
+            $body = curl_exec($request);
+            $info = curl_getinfo($request);
+        }
+
         curl_close($request);
-        return $this->_response($body, $info);
+        return $this->_response($body, $info, $method);
     }
 
     /**
@@ -177,13 +205,14 @@ class Sixreps {
      * @param   array   $info   Headers of response returned from API request
      * @return  array           Processed response
      */
-    protected function _response($body, $info) {
+    protected function _response($body, $info, $method) {
         return array(
             json_decode($body),
             array(
                 'content_type' => $info['content_type'],
                 'http_code'    => $info['http_code'],
-                'url'          => $info['url']
+                'url'          => $info['url'],
+                'method'       => $method
             )
         );
     }
