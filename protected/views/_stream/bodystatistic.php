@@ -1,4 +1,4 @@
-<li class="<?php echo ($spanClass) ? $spanClass : 'span8'; ?>">
+<li class="<?php echo (isset($spanClass)) ? $spanClass : 'span8'; ?>">
     <?php $bodystat = Bodystatistics::streamBodystat($list->object->id); ?>
 
     <a href="<?php echo $this->createUrl('/user/profile/', array('id' => $list->subject->id)); ?>" class="thumbnail profile-photo">

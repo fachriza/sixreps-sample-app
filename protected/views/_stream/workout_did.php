@@ -1,4 +1,4 @@
-<li class="<?php echo ($spanClass) ? $spanClass : 'span8'; ?>">
+<li class="<?php echo (isset($spanClass)) ? $spanClass : 'span8'; ?>">
     <a href="<?php echo $this->createUrl('/user/profile/', array('id' => $list->subject->id)); ?>" class="thumbnail profile-photo">
         <img src="<?php echo $list->subject->avatar->url; ?>" />
     </a>
