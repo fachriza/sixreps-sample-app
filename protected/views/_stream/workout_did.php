@@ -8,7 +8,7 @@
         </h5>
         <p>
             I did
-            <a href="<?php echo $this->createUrl('/workout/view/', array('id' => $list->object->id)); ?>"><?php echo $list->object->name; ?></a>
+            <a href="<?php echo $this->createUrl('/workout/view/', array('id' => $list->object->id)); ?>"><?php echo $list->attachment->content->workout->name; ?></a>
             exercise at <?php echo date('F j, Y - H:i', strtotime($list->created_at)); ?>.                
         </p>
 

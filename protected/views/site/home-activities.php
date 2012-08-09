@@ -24,7 +24,7 @@
 					<?php elseif ($list->type == 'bodyprogress_beforeafter'): ?>
 						<?php echo $this->renderPartial('//_stream/bodyprogress_beforeafter', array('list'=>$list)); ?>
 					<?php else: ?>
-						<?php die(var_dump($list->type)); ?>
+						<?php continue; ?>
 					<?php endif; ?>
 					<?php $last_id = $list->id; ?>
 				<?php endforeach; ?>
