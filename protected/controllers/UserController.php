@@ -64,6 +64,7 @@ class UserController extends Controller
     }
 
     public function actionProfile($user_id = NULL, $before_id = NULL) {
+        $user_id = ($user_id == NULL? Yii::app()->user->id:$user_id);
         $profile = Users::getProfile($user_id);
         $stream = $this->loadActivities($before_id, $user_id);
         
