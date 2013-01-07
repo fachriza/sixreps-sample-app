@@ -69,6 +69,7 @@ jQuery(document).ready(function($) {
                 url: url,
                 type: 'POST',
                 data: {status: statusNew},
+                dataType: "json",
                 complete: function(xhr, textStatus) {
                     //called when complete
                 },
