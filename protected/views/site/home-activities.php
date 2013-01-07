@@ -21,8 +21,8 @@
 						<?php echo $this->renderPartial('//_stream/workout_did', array('list'=>$list)); ?>
 					<?php elseif ($list->type == 'bodystatistic'): ?>
 						<?php echo $this->renderPartial('//_stream/bodystatistic', array('list'=>$list)); ?>
-					<?php elseif ($list->type == 'bodyprogress_beforeafter'): ?>
-						<?php echo $this->renderPartial('//_stream/bodyprogress_beforeafter', array('list'=>$list)); ?>
+					<?php elseif ($list->type == 'bodyprogress_photo'): ?>
+						<?php echo $this->renderPartial('//_stream/bodyprogress_photo', array('list'=>$list)); ?>
 					<?php else: ?>
 						<?php continue; ?>
 					<?php endif; ?>
