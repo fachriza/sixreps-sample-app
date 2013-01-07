@@ -2,8 +2,8 @@
 	<div class="span3">
 		<ul class="thumbnails">
 			<li class="span3">
-				<div class="thumbnail">
-					<img src="<?php echo $profile->photo->url; ?>" alt="<?php echo $profile->photo->name; ?>">
+               <div class="thumbnail">
+					<img src="<?php echo $profile->avatars->profile; ?>" alt="<?php echo $profile->displayname; ?>">
 					<div class="caption"><h5><?php echo $profile->displayname; ?></h5>
 						<p><?php echo $profile->status; ?></p>
 						<p>Follower : <span class="badge <?php echo ($profile->followers_count) ? 'badge-success' : ''; ?>"><?php echo ($profile->followers_count) ? $profile->followers_count : 'No'; ?> <?php echo ($profile->followers_count > 1) ? 'Members' : 'Member';?></span></p>
@@ -27,8 +27,8 @@
 						<?php echo $this->renderPartial('//_stream/workout_did', array('list'=>$list, 'spanClass' => 'span9')); ?>
 					<?php elseif ($list->type == 'bodystatistic'): ?>
 						<?php echo $this->renderPartial('//_stream/bodystatistic', array('list'=>$list, 'spanClass' => 'span9')); ?>
-					<?php elseif ($list->type == 'bodyprogress_beforeafter'): ?>
-						<?php echo $this->renderPartial('//_stream/bodyprogress_beforeafter', array('list'=>$list, 'spanClass' => 'span9')); ?>
+					<?php elseif ($list->type == 'bodyprogress_photo'): ?>
+						<?php echo $this->renderPartial('//_stream/bodyprogress_photo', array('list'=>$list, 'spanClass' => 'span9')); ?>
 					<?php else: ?>
 						<?php die(var_dump($list->type)); ?>
 					<?php endif; ?>
