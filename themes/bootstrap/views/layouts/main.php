@@ -42,7 +42,7 @@
 					if (!Yii::app()->user->isGuest) {
                        $this->widget('zii.widgets.CMenu',array(
 							'items'=>array(
-                                array('label'=>Yii::app()->user->profile->displayname, 'url'=>$this->createUrl('/user/profile/', array('id' => Yii::app()->user->id)), 'visible'=>!Yii::app()->user->isGuest),
+                                array('label'=>Yii::app()->user->profile->displayname, 'url'=>array('/user/profile'), 'visible'=>!Yii::app()->user->isGuest),
 								array('label'=>'Logout', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest, 'htmlOptions'=>array('class'=>'btn'))
 							),
 							'htmlOptions'=>array(
