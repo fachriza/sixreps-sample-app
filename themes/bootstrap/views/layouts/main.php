@@ -40,10 +40,10 @@
 				)); ?>
 				<?php
 					if (!Yii::app()->user->isGuest) {
-						$this->widget('zii.widgets.CMenu',array(
+                       $this->widget('zii.widgets.CMenu',array(
 							'items'=>array(
-								array('label'=>Yii::app()->user->profile->displayname, 'url'=>array('/site/profile'), 'visible'=>!Yii::app()->user->isGuest),
-								array('label'=>'Logout', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'htmlOptions'=>array('class'=>'btn'))
+                                array('label'=>Yii::app()->user->profile->displayname, 'url'=>$this->createUrl('/user/profile/', array('id' => Yii::app()->user->id)), 'visible'=>!Yii::app()->user->isGuest),
+								array('label'=>'Logout', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest, 'htmlOptions'=>array('class'=>'btn'))
 							),
 							'htmlOptions'=>array(
 								'class'=>'nav pull-right',
