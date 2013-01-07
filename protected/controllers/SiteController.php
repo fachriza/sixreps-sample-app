@@ -41,7 +41,7 @@ class SiteController extends Controller
         if (Yii::app()->user->isGuest) {
             $this->render('index');
         } else {
-            $stream = $this->loadActivities($before_id, 'bodystatistic');
+            $stream = $this->loadActivities($before_id, 'bodystatistic,bodystatistic_edit');
             $this->render('home-activities', array('stream' => $stream));
         }
     }
@@ -52,7 +52,7 @@ class SiteController extends Controller
         if (Yii::app()->user->isGuest) {
             $this->render('index');
         } else {
-            $stream = $this->loadActivities($before_id, 'bodyprogress_beforeafter');
+            $stream = $this->loadActivities($before_id, 'bodyprogress_photo');
             $this->render('home-activities', array('stream' => $stream));
         }
     }
