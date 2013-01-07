@@ -16,14 +16,18 @@
                 }
             ?>
             <?php if (isset($beforepic) && !empty($beforepic)): ?>
-                <a class="thumbnail" href="<?php echo $beforepic->file->url; ?>">
-                    <img src="<?php echo $beforepic->file->url; ?>" title="<?php echo $beforepic->file->name; ?>" alt="<?php echo $beforepic->file->name; ?>" />
+                <?php $before_photo_url = (!empty($beforepic->photos->profile->url)? $beforepic->photos->profile->url:$beforepic->photos->original->url);?>
+                <?php $before_photo_name = (!empty($beforepic->photos->profile->name)? $beforepic->photos->profile->name:$beforepic->photos->original->name);?>
+                <a class="thumbnail" href="<?php echo $before_photo_url; ?>">
+                    <img src="<?php echo $before_photo_url; ?>" title="<?php echo $before_photo_name; ?>" alt="<?php echo $before_photo_name; ?>" />
                 </a>
             <?php endif; ?>
             <i class="icon-chevron-right"></i>
             <?php if (isset($afterpic) && !empty($afterpic)): ?>
-                <a class="thumbnail" href="<?php echo $afterpic->file->url; ?>">
-                    <img src="<?php echo $afterpic->file->url; ?>" title="<?php echo $afterpic->file->name; ?>" alt="<?php echo $afterpic->file->name; ?>" />
+                <?php $after_photo_url = (!empty($afterpic->photos->profile->url)? $afterpic->photos->profile->url:$afterpic->photos->original->url);?>
+                <?php $after_photo_name = (!empty($afterpic->photos->profile->name)? $afterpic->photos->profile->name:$afterpic->photos->original->name);?>
+                <a class="thumbnail" href="<?php echo $after_photo_url; ?>">
+                    <img src="<?php echo $after_photo_url; ?>" title="<?php echo $after_photo_name; ?>" alt="<?php echo $after_photo_name; ?>" />
                 </a>
             <?php endif; ?>
             <div class="clear"></div>
